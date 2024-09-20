@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeelRipple</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/style.css')}}">
+    <style>
+        body {
+            font-family: 'pacifico', cursive;
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .container-lg {
+            background: rgba(173, 216, 230, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            color: #0d47a1;
+        }
+        .form input[type="text"] {
+            width: 80%;
+            padding: 15px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #0d47a1;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .form input[type="text"]:focus {
+            transform: scale(1.05);
+        }
+        .form .btn {
+            background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+            padding: 10px 30px;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.4s, transform 0.3s ease;
+        }
+        .form .btn:hover {
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            transform: scale(1.05);
+        }
+        .output {
+            font-size: 2rem;
+            margin-top: 30px;
+            font-weight: bold;
+            text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+            color: #0d47a1; /* Dark Blue Text */
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .form input[type="text"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container-lg">
+            <h1>FEEL RIPPLE</h1>
+            <H2>SENTIMENT ANALYSIS</H2>
+            <form method="POST" class="form">
+                <input type="text" name="inp" placeholder="Enter your feelings...">
+                <input type="submit" name="submit" id="btn" class="btn">
+            </form>
+            <h1 class="output">{{message}}</h1>
+        </div>
+    </div>
+</body>
+</html>
